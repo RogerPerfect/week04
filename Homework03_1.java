@@ -25,7 +25,7 @@ public class Homework03_1 {
             }
         };
         Thread thread = new Thread(task);
-        thread.setDaemon(false);
+        //thread.setDaemon(false);
         thread.start();
         //Thread.sleep(5000);
 
