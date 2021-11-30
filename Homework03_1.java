@@ -21,6 +21,7 @@ public class Homework03_1 {
             synchronized(oo){
                 result[0] = sum();
                 System.out.println("当前线程执行结果：" + result[0]);
+                oo.notifyAll();
             }
         };
         Thread thread = new Thread(task);
@@ -30,6 +31,7 @@ public class Homework03_1 {
 
          //这是得到的返回值
         synchronized (oo) {
+            oo.wait();
             // 确保  拿到result 并输出
             System.out.println("异步计算结果为：" + result[0]);
 
